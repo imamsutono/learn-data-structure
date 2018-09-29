@@ -54,13 +54,17 @@ int main() {
 	push(13);
 	push(10);
 
-	printf("Elements:\n");
+	printf("Data paling atas pada stack: %d\n", peek());
+	printf("Data:\n");
 
 	// cetak data pada stack
 	while(!isempty()) {
 		int data = pop();
 		printf("%d\n", data);
 	}
+
+	printf("Stack penuh: %s\n", isfull() ? "iya" : "tidak");
+	printf("Stack kosong: %s\n", isempty() ? "iya" : "tidak");
 	
 	return 0;
 }
