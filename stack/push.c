@@ -18,6 +18,10 @@ int isfull() {
 		return 0;
 }
 
+int peek() {
+	return stack[top];
+}
+
 int push(int data) {
 	if (!isfull()) {
 		top = top + 1;
