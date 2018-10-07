@@ -86,6 +86,14 @@ void pre_order_traversal(struct node* root) {
 	}
 }
 
+void inorder_traversal(struct node* root) {
+	if (root != NULL) {
+		inorder_traversal(root->leftChild);
+		printf("%d ", root->data);
+		inorder_traversal(root->rightChild);
+	}
+}
+
 int main() {
 	int i;
 	int array[7] = { 27, 14, 35, 10, 19, 31, 42 };
@@ -116,6 +124,9 @@ int main() {
 
 	printf("\nPreorder traversal: ");
 	pre_order_traversal(root);
+
+	printf("\nInorder traversal: ");
+	inorder_traversal(root);
 	printf("\n");
 
 	return 0;
