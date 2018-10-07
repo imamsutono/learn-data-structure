@@ -94,6 +94,14 @@ void inorder_traversal(struct node* root) {
 	}
 }
 
+void post_order_traversal(struct node* root) {
+	if (root != NULL) {
+		post_order_traversal(root->leftChild);
+		post_order_traversal(root->rightChild);
+		printf("%d ", root->data);
+	}
+}
+
 int main() {
 	int i;
 	int array[7] = { 27, 14, 35, 10, 19, 31, 42 };
@@ -122,11 +130,14 @@ int main() {
 		printf("[ x ] Element not found (%d).\n", i);
 	}
 
-	printf("\nPreorder traversal: ");
+	printf("\nPre order traversal: ");
 	pre_order_traversal(root);
 
 	printf("\nInorder traversal: ");
 	inorder_traversal(root);
+
+	printf("\nPost order traversal: ");
+	post_order_traversal(root);
 	printf("\n");
 
 	return 0;
